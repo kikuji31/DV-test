@@ -312,13 +312,14 @@
   /* ---------- Floating LINE ---------- */
   .fab {
     position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 40;
-    width: 56px; height: 56px; border-radius: 50%;
-    background: #06C755; color: #fff; display: grid; place-items: center;
+    height: 52px; padding: 0 22px 0 16px; border-radius: 999px;
+    background: #06C755; color: #fff; display: inline-flex; align-items: center; gap: 8px;
+    font-size: 15px; font-weight: 400; white-space: nowrap;
     box-shadow: 0 10px 24px rgba(6,199,85,0.35);
     transition: transform 160ms var(--ease-out);
   }
-  .fab:active { transform: scale(0.94); }
-  .fab svg { width: 30px; height: 30px; }
+  .fab:active { transform: scale(0.96); }
+  .fab svg { width: 26px; height: 26px; flex: none; }
 
   /* ---------- Ambient layers ---------- */
   .progress {
@@ -353,16 +354,9 @@
   .hero__title .char { display: inline-block; }
   .hero__bg { transform-origin: 50% 0; }
 
-  .js-anim .fab {
-    opacity: 0; transform: translateY(12px) scale(0.96); pointer-events: none;
-    transition: opacity 200ms ease, transform 250ms var(--ease-out);
-  }
-  .js-anim .fab.is-visible { opacity: 1; transform: none; pointer-events: auto; }
-  .js-anim .fab.is-visible:active { transform: scale(0.94); transition-duration: 120ms; }
-
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .js-anim .fab, .js-anim .fab.is-visible:active { transform: none; }
+    .fab:active { transform: none; }
   }
 </style>
 </head>
@@ -642,7 +636,7 @@
   <div class="copyright">© <span data-year></span> DV aiyara Clinic สงวนลิขสิทธิ์</div>
 </footer>
 
-<a class="fab" data-line href="#" aria-label="แชท LINE กับ DV aiyara"><svg aria-hidden="true"><use href="#i-line"/></svg></a>
+<a class="fab" data-line href="#"><svg aria-hidden="true"><use href="#i-line"/></svg>จองคิวทาง LINE</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -699,14 +693,6 @@
     title.innerHTML = [...label]
       .map((c) => `<span class="char" aria-hidden="true">${c === " " ? "&nbsp;" : c}</span>`)
       .join("");
-
-    // Floating LINE button appears once the hero is mostly scrolled past (CSS transition: interruptible)
-    const fab = document.querySelector(".fab");
-    ScrollTrigger.create({
-      trigger: ".hero", start: "bottom 75%",
-      onEnter: () => fab.classList.add("is-visible"),
-      onLeaveBack: () => fab.classList.remove("is-visible"),
-    });
 
     const mm = gsap.matchMedia();
     mm.add({
