@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DV aiyara | คลินิกความงามและผิวพรรณ</title>
+<meta name="description" content="DV aiyara คลินิกความงามและผิวพรรณ ทรีตเมนต์ผิวหน้า ฟิลเลอร์ โบท็อกซ์ เลเซอร์ และปากกาลดน้ำหนัก ดูแลโดยแพทย์ผู้เชี่ยวชาญ">
+<meta name="theme-color" content="#5B4A8B">
+<script>document.documentElement.classList.add("js-anim");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=IBM+Plex+Sans+Thai+Looped:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #5B4A8B;
+    --purple-deep: #4A3B78;
+    --purple-ink: #3E3268;
+    --lavender: #B9A6D9;
+    --lavender-soft: #EDE7F6;
+    --gold: #CDB98A;
+    --gold-deep: #B49E68;
+    --white: #FFFFFF;
+    --mist: #F6F4FA;
+    --text: #4B4560;
+    --text-soft: #7A7390;
+    --serif: "Cormorant Garamond", "IBM Plex Sans Thai Looped", serif;
+    --sans: "IBM Plex Sans Thai Looped", system-ui, sans-serif;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+  body {
+    font-family: var(--sans);
+    font-weight: 300;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; touch-action: manipulation; }
+  button { font: inherit; cursor: pointer; touch-action: manipulation; }
+  .btn, .nav a, .menu-btn, .fab, .socials a {
+    user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+  }
+
+  .container { width: min(1080px, 100% - 40px); margin-inline: auto; }
+
+  /* ---------- Header ---------- */
+  .header {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    background: rgba(91, 74, 139, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding-top: env(safe-area-inset-top);
+  }
+  .header__inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .brand { display: flex; flex-direction: column; line-height: 1; color: var(--gold); }
+  .brand__name { font-family: var(--serif); font-size: 26px; font-weight: 400; letter-spacing: 0.12em; }
+  .brand__sub { font-size: 10px; letter-spacing: 0.3em; margin-top: 4px; opacity: 0.85; }
+
+  .nav { display: flex; gap: 28px; align-items: center; }
+  .nav a {
+    font-size: 14px; color: rgba(255,255,255,0.85);
+    transition: color 200ms ease;
+  }
+  .nav a:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+  .nav__cta {
+    border: 1px solid var(--gold); color: var(--gold) !important;
+    padding: 6px 16px; border-radius: 2px;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .nav a:hover { color: var(--gold); }
+  }
+
+  .menu-btn {
+    display: none; background: none; border: 0; color: var(--gold);
+    width: 44px; height: 44px; align-items: center; justify-content: center;
+  }
+
+  @media (max-width: 820px) {
+    .menu-btn { display: inline-flex; }
+    .nav {
+      position: fixed; inset: calc(68px + env(safe-area-inset-top)) 0 auto 0;
+      flex-direction: column; gap: 0; padding: 8px 0 20px;
+      background: var(--purple);
+      transform: translateY(-8px); opacity: 0; visibility: hidden;
+      transition: transform 250ms var(--ease-out), opacity 200ms ease, visibility 0s 250ms;
+    }
+    .nav.is-open {
+      transform: none; opacity: 1; visibility: visible;
+      transition: transform 250ms var(--ease-out), opacity 200ms ease;
+    }
+    .nav a { padding: 12px 20px; width: 100%; text-align: center; font-size: 16px; }
+    .nav__cta { width: auto !important; margin-top: 8px; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 88vh; min-height: 88svh;
+    display: grid; place-items: center; text-align: center;
+    color: var(--gold); overflow: hidden;
+    border-radius: 0 0 50% 50% / 0 0 14% 14%;
+    background: var(--purple);
+  }
+  .hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero__veil {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(91,74,139,0.15) 0%, rgba(91,74,139,0.35) 60%, rgba(74,59,120,0.85) 100%);
+  }
+  .hero__content { position: relative; padding: 120px 20px 80px; }
+  .hero__title {
+    font-family: var(--serif); font-weight: 300;
+    font-size: clamp(56px, 12vw, 140px); letter-spacing: 0.08em; line-height: 1;
+    text-shadow: 0 2px 30px rgba(62,50,104,0.35);
+  }
+  .hero__sub {
+    font-size: clamp(16px, 2.6vw, 26px); letter-spacing: 0.25em; margin-top: 14px;
+    font-weight: 200; color: #E6D9B5;
+  }
+  .hero__tag {
+    margin-top: 28px; font-size: 15px; color: rgba(255,255,255,0.88); letter-spacing: 0.04em;
+  }
+
+  /* ---------- Common ---------- */
+  section { scroll-margin-top: 80px; }
+  .eyebrow { font-size: 12px; letter-spacing: 0.3em; color: var(--text-soft); text-transform: uppercase; }
+  .h2 {
+    font-weight: 300; color: var(--purple-ink);
+    font-size: clamp(26px, 3.4vw, 36px); line-height: 1.35; margin: 6px 0 16px;
+  }
+  .lead { color: var(--text-soft); font-size: 15px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 10px 24px; border-radius: 2px; font-size: 14px; letter-spacing: 0.06em;
+    border: 1px solid transparent;
+    transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn--purple { background: var(--purple); color: #fff; }
+  .btn--gold { background: var(--gold); color: var(--purple-ink); }
+  .btn--line { background: #06C755; color: #fff; }
+  .btn--outline { border-color: var(--purple); color: var(--purple); background: transparent; }
+  @media (hover: hover) and (pointer: fine) {
+    .btn--purple:hover { background: var(--purple-deep); }
+    .btn--gold:hover { background: var(--gold-deep); }
+    .btn--line:hover { background: #05b04b; }
+    .btn--outline:hover { background: var(--purple); color: #fff; }
+  }
+
+  .mark { width: 64px; height: 64px; margin: 0 auto; color: var(--gold); }
+
+  /* ---------- Welcome ---------- */
+  .welcome { text-align: center; padding: 72px 0 40px; }
+  .welcome .h2 { margin-top: 18px; letter-spacing: 0.02em; }
+  .welcome p { max-width: 640px; margin: 0 auto; color: var(--text-soft); font-size: 15px; }
+
+  /* ---------- Split sections ---------- */
+  .story {
+    padding: 48px 0 96px;
+    background: linear-gradient(180deg, var(--white) 0%, var(--mist) 30%, var(--mist) 80%, var(--white) 100%);
+  }
+  .split {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+  .split + .split { margin-top: 56px; }
+  .split--rev .split__media { order: -1; }
+  .split__text p + p { margin-top: 14px; }
+  .split__text p { font-size: 15px; color: var(--text-soft); }
+
+  .orb-wrap { position: relative; width: min(400px, 100%); aspect-ratio: 1; margin-inline: auto; }
+  .orb-ring {
+    position: absolute; inset: -18px; border-radius: 50%;
+    border: 1px dashed rgba(205, 185, 138, 0.75);
+    pointer-events: none;
+  }
+  .orb-ring::after {
+    content: ""; position: absolute; top: -4px; left: calc(50% - 4px);
+    width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
+    box-shadow: 0 0 12px rgba(205, 185, 138, 0.9);
+  }
+  .orb {
+    width: 100%; height: 100%;
+    border-radius: 50%; border: 3px solid var(--gold);
+    box-shadow: 0 20px 60px rgba(91,74,139,0.18);
+    overflow: hidden; position: relative;
+  }
+  .orb svg { width: 100%; height: 100%; }
+
+  .services { list-style: none; margin: 22px 0 26px; }
+  .services li { position: relative; padding-left: 34px; }
+  .services li + li { margin-top: 16px; }
+  .services li::before {
+    content: ""; position: absolute; left: 0; top: 13px;
+    width: 22px; height: 6px;
+    background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 6'%3E%3Cpath d='M1 4c3-3 6-3 10 0s7 3 10 0' fill='none' stroke='%23CDB98A' stroke-width='1.4' stroke-linecap='round'/%3E%3C/svg%3E");
+  }
+  .services h3 { font-weight: 400; font-size: 16px; color: var(--purple-ink); letter-spacing: 0.04em; }
+  .services p { font-size: 14px; color: var(--text-soft); }
+
+  @media (max-width: 820px) {
+    .split { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .split__media { order: -1; }
+    .orb-wrap { width: min(300px, 76%); }
+    .orb-ring { inset: -12px; }
+    .services { text-align: center; }
+    .services li { padding-left: 0; padding-top: 18px; }
+    .services li::before { left: 50%; top: 0; transform: translateX(-50%); }
+  }
+
+  /* ---------- Voucher ---------- */
+  .voucher { position: relative; background: var(--purple); color: #fff; padding: 88px 0; overflow: hidden; }
+  .voucher__inner { position: relative; z-index: 1; }
+  .blobs span {
+    position: absolute; border-radius: 50%; pointer-events: none;
+    background: radial-gradient(circle, rgba(185,166,217,0.55) 0%, rgba(185,166,217,0) 70%);
+  }
+  .blobs span:nth-child(1) { width: 520px; height: 520px; left: -160px; top: -200px; }
+  .blobs span:nth-child(2) { width: 420px; height: 420px; right: -120px; bottom: -180px; background: radial-gradient(circle, rgba(205,185,138,0.35) 0%, rgba(205,185,138,0) 70%); }
+  .blobs span:nth-child(3) { width: 300px; height: 300px; left: 45%; top: 30%; }
+
+  /* ---------- Marquee ---------- */
+  .marquee {
+    overflow: hidden; padding: 22px 0; background: var(--white);
+    border-bottom: 1px solid #EEEAF4;
+  }
+  .marquee__track { display: flex; width: max-content; }
+  .marquee__group { display: flex; align-items: center; gap: 28px; padding-right: 28px; flex: none; }
+  .marquee span { font-size: clamp(20px, 3vw, 30px); font-weight: 200; color: var(--purple-ink); white-space: nowrap; }
+  .marquee i { font-style: normal; color: var(--gold); font-size: 16px; }
+  .voucher .h2 { color: #fff; }
+  .voucher p { color: rgba(255,255,255,0.82); font-size: 15px; max-width: 440px; }
+  .voucher .btn { margin-top: 22px; }
+  .voucher__inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .cards { position: relative; height: 340px; }
+  .card {
+    position: absolute; width: 210px; height: 290px; background: #fff;
+    border-radius: 4px; box-shadow: 0 24px 50px rgba(30,20,60,0.35);
+    display: grid; place-items: center;
+  }
+  .card--back { left: 18%; top: 30px; transform: rotate(-8deg); background: #F1EEF7; }
+  .card--front { left: 36%; top: 10px; transform: rotate(6deg); }
+  .card .mark { width: 92px; height: 92px; }
+  .card__notch {
+    position: absolute; top: -10px; right: 22px; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--purple);
+  }
+  @media (max-width: 820px) {
+    .voucher__inner { grid-template-columns: 1fr; text-align: center; }
+    .voucher p { margin-inline: auto; }
+    .cards { height: 300px; width: 300px; margin: 0 auto; }
+    .card { width: 170px; height: 236px; }
+    .card--back { left: 12%; }
+    .card--front { left: 32%; }
+  }
+
+  /* ---------- Contact ---------- */
+  .contact { padding: 96px 0; }
+  .contact__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: stretch; }
+  .map {
+    border-radius: 2px; overflow: hidden; min-height: 380px;
+    box-shadow: 0 18px 40px rgba(91,74,139,0.15);
+    background: var(--lavender-soft);
+  }
+  .map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
+  .contact .brand { color: var(--gold); margin-bottom: 18px; }
+  .contact .brand__name { font-size: 36px; }
+  .contact .brand__sub { color: var(--gold-deep); }
+  .info { list-style: none; margin: 8px 0 28px; }
+  .info li { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--purple-ink); }
+  .info li + li { margin-top: 12px; }
+  .info svg { width: 18px; height: 18px; flex: none; margin-top: 5px; color: var(--gold-deep); }
+  .contact__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .contact__actions .btn { padding: 14px 28px; font-size: 15px; }
+  .contact__actions svg { width: 20px; height: 20px; }
+  @media (max-width: 820px) {
+    .contact__inner { grid-template-columns: 1fr; }
+    .map { order: 2; min-height: 300px; }
+    .map iframe { min-height: 300px; }
+    .contact__actions .btn { flex: 1 1 100%; justify-content: center; }
+  }
+
+  /* ---------- Footer ---------- */
+  .footer { border-top: 1px solid #EEEAF4; padding: 56px 0 0; }
+  .footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; padding-bottom: 48px; }
+  .footer .brand { color: var(--purple-ink); }
+  .footer .brand__sub { color: var(--text-soft); }
+  .footer address { font-style: normal; margin-top: 16px; font-size: 14px; color: var(--purple-ink); font-weight: 400; }
+  .footer h4 { font-weight: 500; font-size: 14px; color: var(--purple-ink); margin-bottom: 10px; }
+  .footer ul { list-style: none; font-size: 14px; color: var(--text-soft); }
+  .footer ul a { transition: color 200ms ease; }
+  @media (hover: hover) and (pointer: fine) { .footer ul a:hover { color: var(--purple); } }
+  .socials { display: flex; gap: 10px; }
+  .socials a {
+    width: 32px; height: 32px; display: grid; place-items: center;
+    background: var(--gold); color: #fff; border-radius: 2px;
+  }
+  .socials svg { width: 16px; height: 16px; }
+  .copyright {
+    background: var(--purple-ink); color: rgba(255,255,255,0.7);
+    text-align: center; font-size: 12px; padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+  }
+  @media (max-width: 820px) {
+    .footer__grid { grid-template-columns: 1fr 1fr; }
+    .footer__grid > :first-child { grid-column: 1 / -1; }
+  }
+
+  /* ---------- Floating LINE ---------- */
+  .fab {
+    position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 40;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #06C755; color: #fff; display: grid; place-items: center;
+    box-shadow: 0 10px 24px rgba(6,199,85,0.35);
+    transition: transform 160ms var(--ease-out);
+  }
+  .fab:active { transform: scale(0.94); }
+  .fab svg { width: 30px; height: 30px; }
+
+  /* ---------- Ambient layers ---------- */
+  .progress {
+    position: absolute; left: 0; bottom: 0; width: 100%; height: 2px;
+    background: var(--gold); transform-origin: 0 50%; transform: scaleX(0);
+  }
+  .hero__sheen {
+    position: absolute; inset: 0 -50%; pointer-events: none;
+    background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,0.16) 50%, transparent 58%);
+    transform: translateX(-60%);
+  }
+  .sparkles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .sparkle {
+    position: absolute; border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, rgba(255,240,210,0.6) 35%, rgba(255,255,255,0) 70%);
+  }
+  .scroll-cue {
+    position: absolute; left: 50%; bottom: 9%; transform: translateX(-50%); z-index: 2;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    color: rgba(255,255,255,0.75); font-size: 11px; letter-spacing: 0.3em;
+  }
+  .scroll-cue__line { position: relative; width: 1px; height: 44px; background: rgba(205,185,138,0.35); overflow: hidden; }
+  .scroll-cue__dot { position: absolute; left: 0; top: 0; width: 1px; height: 14px; background: var(--gold); }
+
+  .h2 .line { display: block; overflow: hidden; padding: 0.22em 0 0.08em; margin: -0.22em 0 -0.08em; }
+  .h2 .line__inner { display: block; }
+
+  /* ---------- Motion (GSAP) ---------- */
+  /* Hidden only while GSAP is running; if it fails to load, js-anim is removed and the page renders statically */
+  .js-anim .header, .js-anim .hero__title, .js-anim .hero__sub, .js-anim .hero__tag,
+  .js-anim .reveal, .js-anim .reveal-item { visibility: hidden; }
+  .hero__title .char { display: inline-block; }
+  .hero__bg { transform-origin: 50% 0; }
+
+  .js-anim .fab {
+    opacity: 0; transform: translateY(12px) scale(0.96); pointer-events: none;
+    transition: opacity 200ms ease, transform 250ms var(--ease-out);
+  }
+  .js-anim .fab.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+  .js-anim .fab.is-visible:active { transform: scale(0.94); transition-duration: 120ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js-anim .fab, .js-anim .fab.is-visible:active { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Reusable SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 64 64">
+      <circle cx="32" cy="27" r="19" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <text x="32" y="33.5" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="17" letter-spacing="1" fill="currentColor">DV</text>
+      <path d="M12 54c6-6 13-6 20 0s14 6 20 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-line" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.5 8.2-6 1.5-1.7 2.2-3.3 2.2-5C22 6.6 17.5 3 12 3Zm-3.6 10.4H6.4c-.3 0-.5-.2-.5-.5V9c0-.3.2-.5.5-.5s.5.2.5.5v3.4h1.5c.3 0 .5.2.5.5s-.2.5-.5.5Zm2-.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9c0-.3.2-.5.5-.5s.5.2.5.5v3.9Zm4.7 0c0 .2-.1.4-.3.5h-.2c-.2 0-.3-.1-.4-.2l-2-2.8v2.5c0 .3-.2.5-.5.5s-.5-.2-.5-.5V9c0-.2.1-.4.3-.5h.2c.2 0 .3.1.4.2l2 2.8V9c0-.3.2-.5.5-.5s.5.2.5.5v3.9Zm3.2-2.4c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v.9h1.5c.3 0 .5.2.5.5s-.2.5-.5.5h-2c-.3 0-.5-.2-.5-.5V9c0-.3.2-.5.5-.5h2c.3 0 .5.2.5.5s-.2.5-.5.5h-1.5v1h1.5Z"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M5 4h3.5l1.5 4-2 1.3a11 11 0 0 0 6.7 6.7L16 14l4 1.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.6" d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4A20 20 0 0 0 14.3 4C12 4 10.5 5.4 10.5 7.9v2.6H8v3h2.5V21h3Z"/>
+    </symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24">
+      <rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.8" cy="7.2" r="1.1" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-tt" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M16.5 3c.3 2.2 1.6 3.6 3.8 3.8v3a7 7 0 0 1-3.8-1.2v6a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.1a2.6 2.6 0 1 0 1.8 2.4V3h2.9Z"/>
+    </symbol>
+
+    <!-- Crystal texture (placeholder imagery) -->
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9DDF7"/><stop offset="1" stop-color="#9B84C9"/></linearGradient>
+    <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9B4E8"/><stop offset="1" stop-color="#6E5AA3"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F4ECFB"/><stop offset="1" stop-color="#B49BDB"/></linearGradient>
+    <linearGradient id="g4" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0" stop-color="#D8C3EE"/><stop offset="1" stop-color="#5B4A8B"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="softer"><feGaussianBlur stdDeviation="14"/></filter>
+    <radialGradient id="bokeh"><stop offset="0" stop-color="#fff" stop-opacity="0.9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  </defs>
+</svg>
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#top" class="brand" aria-label="DV aiyara หน้าแรก">
+      <span class="brand__name">DV aiyara</span>
+      <span class="brand__sub">CLINIC</span>
+    </a>
+    <button class="menu-btn" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="nav">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav" id="nav">
+      <a href="#top">หน้าแรก</a>
+      <a href="#about">เกี่ยวกับเรา</a>
+      <a href="#services">บริการ</a>
+      <a href="#promotion">โปรโมชั่น</a>
+      <a href="#contact">ติดต่อ</a>
+      <a class="nav__cta" data-line href="#">จองคิว</a>
+    </nav>
+  </div>
+  <span class="progress" aria-hidden="true"></span>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <svg class="hero__bg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="1200" height="800" fill="#8E77C2"/>
+      <g filter="url(#softer)">
+        <polygon points="0,0 520,0 380,420 0,300" fill="url(#g1)"/>
+        <polygon points="520,0 1200,0 1200,260 760,380" fill="url(#g2)"/>
+        <polygon points="380,420 760,380 1200,260 1200,800 300,800" fill="url(#g4)"/>
+        <polygon points="0,300 380,420 300,800 0,800" fill="url(#g2)"/>
+      </g>
+      <g filter="url(#soft)" opacity="0.85">
+        <polygon points="430,120 640,60 720,300 520,380" fill="url(#g3)"/>
+        <polygon points="640,60 860,140 760,360 720,300" fill="url(#g1)" opacity="0.8"/>
+        <polygon points="200,180 430,120 520,380 280,420" fill="url(#g2)" opacity="0.7"/>
+        <polygon points="860,140 1080,240 980,460 760,360" fill="url(#g3)" opacity="0.6"/>
+        <polygon points="520,380 760,360 700,560 480,600" fill="url(#g1)" opacity="0.55"/>
+      </g>
+      <g opacity="0.55">
+        <path d="M640 60 L720 300 L520 380" stroke="#fff" stroke-width="2" fill="none" filter="url(#soft)"/>
+        <path d="M860 140 L760 360" stroke="#fff" stroke-width="1.5" fill="none" filter="url(#soft)"/>
+      </g>
+    </svg>
+    <div class="hero__veil"></div>
+    <div class="hero__sheen" aria-hidden="true"></div>
+    <div class="sparkles" aria-hidden="true"></div>
+    <a class="scroll-cue" href="#about" aria-label="เลื่อนลงไปดูเนื้อหา">
+      <span class="scroll-cue__text">เลื่อนลง</span>
+      <span class="scroll-cue__line"><span class="scroll-cue__dot"></span></span>
+    </a>
+    <div class="hero__content">
+      <h1 class="hero__title">DV aiyara</h1>
+      <p class="hero__sub">คลินิกความงามและผิวพรรณ</p>
+      <p class="hero__tag">ผิวสวยที่เป็นคุณ ดูแลอย่างอ่อนโยนโดยแพทย์ผู้เชี่ยวชาญ</p>
+    </div>
+  </section>
+
+  <!-- Welcome -->
+  <section class="welcome">
+    <div class="container reveal">
+      <svg class="mark mark--draw" viewBox="0 0 64 64" aria-hidden="true">
+        <circle class="draw" cx="32" cy="27" r="19" transform="rotate(-90 32 27)" fill="none" stroke="currentColor" stroke-width="1.6"/>
+        <text x="32" y="33.5" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="17" letter-spacing="1" fill="currentColor">DV</text>
+        <path class="draw" d="M12 54c6-6 13-6 20 0s14 6 20 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <h2 class="h2">ยินดีต้อนรับสู่ DV aiyara</h2>
+      <p>พื้นที่แห่งความงามที่สงบและอบอุ่น ให้คุณได้พักผ่อนไปพร้อมกับการดูแลผิว ทุกขั้นตอนใส่ใจในรายละเอียด ด้วยผลิตภัณฑ์คุณภาพและเทคโนโลยีที่ได้มาตรฐาน เพื่อผลลัพธ์ที่เป็นธรรมชาติและปลอดภัย</p>
+    </div>
+  </section>
+
+  <div class="story">
+    <!-- About -->
+    <section class="container split" id="about">
+      <div class="split__text reveal">
+        <span class="eyebrow">เกี่ยวกับเรา</span>
+        <h2 class="h2">ความงามที่เริ่มจาก<br>ผิวที่แข็งแรง</h2>
+        <p>DV aiyara ดูแลโดยแพทย์ที่ผ่านการอบรมด้านเวชศาสตร์ความงาม เราเริ่มจากการวิเคราะห์สภาพผิวของคุณอย่างละเอียด แล้วจึงวางแผนการดูแลที่เหมาะกับคุณที่สุด</p>
+        <p>คลินิกตกแต่งอย่างเรียบหรูและเป็นส่วนตัว ห้องทรีตเมนต์สะอาดตามมาตรฐาน ใช้ผลิตภัณฑ์และยาที่ได้รับอนุญาตจาก อย. ทุกรายการ ให้คุณมั่นใจได้ทุกครั้งที่มารับบริการ</p>
+      </div>
+      <div class="split__media">
+        <div class="orb-wrap">
+        <span class="orb-ring" aria-hidden="true"></span>
+        <div class="orb" role="img" aria-label="ภาพบรรยากาศคลินิก (รูปชั่วคราว)">
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="400" fill="url(#g3)"/>
+            <rect width="400" height="400" fill="#D9CCEF" opacity="0.5"/>
+            <g>
+              <circle cx="90" cy="120" r="26" fill="url(#bokeh)"/>
+              <circle cx="300" cy="90" r="18" fill="url(#bokeh)"/>
+              <circle cx="220" cy="210" r="36" fill="url(#bokeh)" opacity="0.7"/>
+              <circle cx="120" cy="290" r="20" fill="url(#bokeh)"/>
+              <circle cx="320" cy="300" r="30" fill="url(#bokeh)" opacity="0.8"/>
+              <circle cx="180" cy="80" r="12" fill="url(#bokeh)"/>
+              <circle cx="60" cy="220" r="14" fill="url(#bokeh)"/>
+              <circle cx="260" cy="350" r="16" fill="url(#bokeh)"/>
+              <circle cx="350" cy="190" r="10" fill="url(#bokeh)"/>
+            </g>
+          </svg>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="container split split--rev" id="services">
+      <div class="split__media">
+        <div class="orb-wrap">
+        <span class="orb-ring" aria-hidden="true"></span>
+        <div class="orb" role="img" aria-label="ภาพบริการ (รูปชั่วคราว)">
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="400" fill="url(#g2)"/>
+            <g filter="url(#soft)">
+              <polygon points="60,0 220,0 180,200 40,160" fill="url(#g1)"/>
+              <polygon points="220,0 400,40 360,240 180,200" fill="url(#g3)" opacity="0.8"/>
+              <polygon points="40,160 180,200 160,400 0,400 0,200" fill="url(#g4)" opacity="0.8"/>
+              <polygon points="180,200 360,240 400,400 160,400" fill="url(#g1)" opacity="0.7"/>
+            </g>
+            <circle cx="230" cy="250" r="40" fill="url(#bokeh)" opacity="0.6"/>
+            <circle cx="120" cy="120" r="22" fill="url(#bokeh)" opacity="0.7"/>
+          </svg>
+        </div>
+        </div>
+      </div>
+      <div class="split__text reveal">
+        <span class="eyebrow">บริการของเรา</span>
+        <h2 class="h2">ดูแลครบ<br>ทุกเรื่องความงาม</h2>
+        <p>ทรีตเมนต์ที่ออกแบบเฉพาะสำหรับคุณ เพื่อผิวสุขภาพดีและผลลัพธ์ที่เป็นธรรมชาติ</p>
+        <ul class="services">
+          <li class="reveal-item">
+            <h3>ทรีตเมนต์ผิวหน้า</h3>
+            <p>ฟื้นฟูผิวให้กระจ่างใส ชุ่มชื้น ลดสิวและรอยดำ ด้วยโปรแกรมที่เหมาะกับสภาพผิวของคุณ</p>
+          </li>
+          <li class="reveal-item">
+            <h3>ฟิลเลอร์ &amp; โบท็อกซ์</h3>
+            <p>ปรับรูปหน้า ลดริ้วรอย เติมเต็มจุดที่ต้องการ อย่างเป็นธรรมชาติ ดูแลโดยแพทย์</p>
+          </li>
+          <li class="reveal-item">
+            <h3>เลเซอร์</h3>
+            <p>ลดฝ้า กระ จุดด่างดำ และกระชับรูขุมขน ด้วยเทคโนโลยีเลเซอร์มาตรฐานสากล</p>
+          </li>
+          <li class="reveal-item">
+            <h3>ปากกาลดน้ำหนัก</h3>
+            <p>โปรแกรมควบคุมน้ำหนักภายใต้การดูแลของแพทย์ ตรวจประเมินสุขภาพก่อนเริ่ม และติดตามผลอย่างใกล้ชิดทุกขั้นตอน</p>
+          </li>
+        </ul>
+        <a class="btn btn--purple" data-line href="#">ปรึกษาแพทย์ฟรี</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Voucher / Promotion -->
+  <section class="voucher" id="promotion">
+    <div class="blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="container voucher__inner">
+      <div class="reveal">
+        <h2 class="h2">บัตรของขวัญ<br>&amp; โปรโมชั่น</h2>
+        <p>มอบความสวยให้คนที่คุณรักด้วยบัตรของขวัญจาก DV aiyara ใช้ได้กับทุกบริการ อายุการใช้งาน 1 ปี พร้อมโปรโมชั่นพิเศษประจำเดือน สอบถามรายละเอียดได้ทาง LINE</p>
+        <a class="btn btn--gold" data-line href="#">สอบถามทาง LINE</a>
+      </div>
+      <div class="cards" aria-hidden="true">
+        <div class="card card--back"><svg class="mark"><use href="#mark"/></svg></div>
+        <div class="card card--front"><span class="card__notch"></span><svg class="mark"><use href="#mark"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span>ทรีตเมนต์ผิวหน้า</span><i>✦</i><span>ฟิลเลอร์</span><i>✦</i><span>โบท็อกซ์</span><i>✦</i>
+        <span>เลเซอร์</span><i>✦</i><span>ปากกาลดน้ำหนัก</span><i>✦</i><span>ผิวกระจ่างใส</span><i>✦</i><span>DV aiyara</span><i>✦</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container contact__inner">
+      <div class="map reveal">
+        <iframe data-map title="แผนที่ DV aiyara" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="reveal">
+        <div class="brand">
+          <span class="brand__name">DV aiyara</span>
+          <span class="brand__sub">CLINIC</span>
+        </div>
+        <ul class="info">
+          <li class="reveal-item"><svg aria-hidden="true"><use href="#i-phone"/></svg><a data-tel href="#"><span data-text="phoneDisplay"></span></a></li>
+          <li class="reveal-item"><svg aria-hidden="true"><use href="#i-line"/></svg><a data-line href="#">LINE: <span data-text="lineId"></span></a></li>
+          <li class="reveal-item"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-text="hours"></span></li>
+          <li class="reveal-item"><svg aria-hidden="true"><use href="#i-pin"/></svg><span data-text="address"></span></li>
+        </ul>
+        <div class="contact__actions">
+          <a class="btn btn--line" data-line href="#"><svg aria-hidden="true"><use href="#i-line"/></svg>จองคิวทาง LINE</a>
+          <a class="btn btn--outline" data-tel href="#"><svg aria-hidden="true"><use href="#i-phone"/></svg>โทรหาเรา</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div>
+      <div class="brand">
+        <span class="brand__name">DV aiyara</span>
+        <span class="brand__sub">CLINIC</span>
+      </div>
+      <address data-text="address"></address>
+    </div>
+    <div>
+      <h4>เมนูลัด</h4>
+      <ul>
+        <li><a href="#top">หน้าแรก</a></li>
+        <li><a href="#about">เกี่ยวกับเรา</a></li>
+        <li><a href="#services">บริการ</a></li>
+        <li><a href="#promotion">โปรโมชั่น</a></li>
+        <li><a href="#contact">ติดต่อ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>ติดตามเรา</h4>
+      <div class="socials">
+        <a data-social="facebook" href="#" aria-label="Facebook" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-fb"/></svg></a>
+        <a data-social="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+        <a data-social="tiktok" href="#" aria-label="TikTok" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tt"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">© <span data-year></span> DV aiyara Clinic สงวนลิขสิทธิ์</div>
+</footer>
+
+<a class="fab" data-line href="#" aria-label="แชท LINE กับ DV aiyara"><svg aria-hidden="true"><use href="#i-line"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  // ===== ข้อมูลคลินิก: แก้ตรงนี้ที่เดียว =====
+  const CLINIC = {
+    phone: "+66812345678",          // เบอร์สำหรับกดโทร (รูปแบบสากล)
+    phoneDisplay: "081-234-5678",   // เบอร์ที่แสดงบนเว็บ
+    lineId: "@dvaiyara",            // LINE Official Account ID (มี @ นำหน้า)
+    hours: "เปิดทุกวัน 10:00 – 20:00 น.",
+    address: "123 ถนนตัวอย่าง แขวงตัวอย่าง เขตตัวอย่าง กรุงเทพฯ 10110",
+    mapQuery: "Bangkok",            // ชื่อคลินิกหรือที่อยู่สำหรับปักหมุด Google Maps
+    social: {
+      facebook: "https://www.facebook.com/",
+      instagram: "https://www.instagram.com/",
+      tiktok: "https://www.tiktok.com/",
+    },
+  };
+
+  const lineUrl = "https://line.me/R/ti/p/" + encodeURIComponent(CLINIC.lineId);
+  document.querySelectorAll("[data-line]").forEach((a) => {
+    a.href = lineUrl; a.target = "_blank"; a.rel = "noopener";
+  });
+  document.querySelectorAll("[data-tel]").forEach((a) => { a.href = "tel:" + CLINIC.phone; });
+  document.querySelectorAll("[data-text]").forEach((el) => { el.textContent = CLINIC[el.dataset.text]; });
+  document.querySelectorAll("[data-social]").forEach((a) => { a.href = CLINIC.social[a.dataset.social]; });
+  document.querySelector("[data-map]").src =
+    "https://www.google.com/maps?q=" + encodeURIComponent(CLINIC.mapQuery) + "&output=embed";
+  document.querySelector("[data-year]").textContent = new Date().getFullYear();
+
+  // Mobile menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const nav = document.getElementById("nav");
+  const setMenu = (open) => {
+    nav.classList.toggle("is-open", open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "ปิดเมนู" : "เปิดเมนู");
+  };
+  menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
+  nav.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+
+  // ===== Motion (GSAP + ScrollTrigger) =====
+  if (window.gsap && window.ScrollTrigger) initMotion();
+  else document.documentElement.classList.remove("js-anim");
+
+  function initMotion() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Split the Latin hero title into letters (Thai text is never split: combining vowels would break)
+    const title = document.querySelector(".hero__title");
+    const label = title.textContent;
+    title.setAttribute("aria-label", label);
+    title.innerHTML = [...label]
+      .map((c) => `<span class="char" aria-hidden="true">${c === " " ? "&nbsp;" : c}</span>`)
+      .join("");
+
+    // Floating LINE button appears once the hero is mostly scrolled past (CSS transition: interruptible)
+    const fab = document.querySelector(".fab");
+    ScrollTrigger.create({
+      trigger: ".hero", start: "bottom 75%",
+      onEnter: () => fab.classList.add("is-visible"),
+      onLeaveBack: () => fab.classList.remove("is-visible"),
+    });
+
+    const mm = gsap.matchMedia();
+    mm.add({
+      motion: "(prefers-reduced-motion: no-preference)",
+      reduce: "(prefers-reduced-motion: reduce)",
+      fine: "(hover: hover) and (pointer: fine)",
+    }, (ctx) => {
+      const { motion, fine } = ctx.conditions;
+      const d = motion ? 1 : 0; // reduced motion keeps the fades, drops the movement
+      const once = (trigger, start = "top 85%") => ({ trigger, start, once: true });
+
+      // Intro: header, title letters, subtitle
+      gsap.set(".hero__title", { autoAlpha: 1 });
+      gsap.timeline({ defaults: { ease: "expo.out" } })
+        .fromTo(".header", { autoAlpha: 0, yPercent: -100 * d }, { autoAlpha: 1, yPercent: 0, duration: 0.9 })
+        .fromTo(".hero__title .char",
+          { autoAlpha: 0, yPercent: 50 * d, filter: `blur(${8 * d}px)` },
+          { autoAlpha: 1, yPercent: 0, filter: "blur(0px)", duration: 1.4, stagger: 0.05 }, 0.15)
+        .fromTo([".hero__sub", ".hero__tag"],
+          { autoAlpha: 0, y: 16 * d },
+          { autoAlpha: 1, y: 0, duration: 1.1, stagger: 0.12 }, 0.7);
+
+      // Section text: fade up in small batches
+      gsap.set(".reveal, .reveal-item", { autoAlpha: 0, y: 24 * d });
+      ScrollTrigger.batch(".reveal, .reveal-item", {
+        start: "top 88%", once: true,
+        onEnter: (els) => gsap.to(els, { autoAlpha: 1, y: 0, duration: 1, ease: "expo.out", stagger: 0.08, overwrite: true }),
+      });
+
+      // Welcome mark: ring and wave draw themselves
+      gsap.utils.toArray(".mark--draw .draw").forEach((p) => {
+        const len = p.getTotalLength();
+        gsap.set(p, { strokeDasharray: len, strokeDashoffset: motion ? len : 0 });
+      });
+      if (motion) {
+        gsap.to(".mark--draw .draw", { strokeDashoffset: 0, duration: 1.6, ease: "power2.inOut", stagger: 0.25, scrollTrigger: once(".mark--draw") });
+      }
+
+      gsap.utils.toArray(".orb").forEach((orb) => {
+        if (!motion) {
+          gsap.from(orb, { autoAlpha: 0, duration: 0.6, scrollTrigger: once(orb) });
+          return;
+        }
+        // Circular reveal, then a slow parallax drift of the image inside the frame
+        gsap.fromTo(orb,
+          { clipPath: "circle(0% at 50% 50%)" },
+          { clipPath: "circle(52% at 50% 50%)", duration: 1.4, ease: "expo.inOut", clearProps: "clipPath", scrollTrigger: once(orb) });
+        gsap.fromTo(orb.querySelector("svg"),
+          { yPercent: -6, scale: 1.15 },
+          { yPercent: 6, scale: 1.15, ease: "none", scrollTrigger: { trigger: orb, start: "top bottom", end: "bottom top", scrub: true } });
+      });
+
+      if (motion) {
+        // Hero depth: crystal background drifts slower than the page, title eases away
+        const heroScroll = { trigger: ".hero", start: "top top", end: "bottom top", scrub: true };
+        gsap.to(".hero__bg", { yPercent: 18, scale: 1.08, ease: "none", scrollTrigger: heroScroll });
+        gsap.to(".hero__content", { yPercent: 30, opacity: 0.2, ease: "none", scrollTrigger: { ...heroScroll } });
+      }
+
+      // Gift cards fan out from a stack (CSS holds their final rotation)
+      const fan = { autoAlpha: 0, y: 80 * d, duration: 1.3, ease: "expo.out", scrollTrigger: once(".cards", "top 80%") };
+      if (motion) fan.rotation = 0;
+      gsap.from(".card--back", fan);
+      gsap.from(".card--front", { ...fan, delay: 0.12 });
+
+      if (!motion) return;
+      const cleanups = [];
+      const listen = (el, type, fn) => { el.addEventListener(type, fn); cleanups.push(() => el.removeEventListener(type, fn)); };
+
+      // Endless loops only run while their section is on screen (saves battery on phones)
+      const whileVisible = (trigger, ...tweens) => {
+        tweens.forEach((t) => t.pause());
+        ScrollTrigger.create({ trigger, start: "top bottom", end: "bottom top",
+          onToggle: (self) => tweens.forEach((t) => (self.isActive ? t.play() : t.pause())) });
+      };
+
+      // Headings: each line rises out of a mask
+      gsap.utils.toArray(".h2").forEach((h) => {
+        h.innerHTML = h.innerHTML.split(/<br\s*\/?>/i)
+          .map((l) => `<span class="line"><span class="line__inner">${l.trim()}</span></span>`).join("");
+        gsap.from(h.querySelectorAll(".line__inner"), {
+          yPercent: 110, duration: 1.2, ease: "expo.out", stagger: 0.12, scrollTrigger: once(h, "top 90%"),
+        });
+      });
+
+      // Hero: drifting sparkles, a periodic light sweep, scroll cue
+      const sparkles = document.querySelector(".sparkles");
+      const count = window.innerWidth < 700 ? 14 : 28;
+      const sparkleTweens = [];
+      for (let i = 0; i < count; i++) {
+        const s = document.createElement("span");
+        s.className = "sparkle";
+        const size = gsap.utils.random(4, 12);
+        gsap.set(s, { width: size, height: size, left: `${gsap.utils.random(0, 100)}%`, top: `${gsap.utils.random(10, 100)}%`, opacity: 0 });
+        sparkles.appendChild(s);
+        sparkleTweens.push(gsap.timeline({ repeat: -1, delay: gsap.utils.random(0, 6) })
+          .to(s, { opacity: gsap.utils.random(0.5, 1), duration: 1.2, ease: "sine.inOut" })
+          .to(s, { y: -gsap.utils.random(120, 280), x: gsap.utils.random(-40, 40), duration: gsap.utils.random(6, 11), ease: "sine.inOut" }, 0)
+          .to(s, { opacity: 0, duration: 1.4, ease: "sine.inOut" }, ">-1.4"));
+      }
+      cleanups.push(() => (sparkles.innerHTML = ""));
+      const sheen = gsap.fromTo(".hero__sheen", { xPercent: -60 }, { xPercent: 60, duration: 2.6, ease: "power2.inOut", repeat: -1, repeatDelay: 4.5, delay: 2 });
+      const cue = gsap.fromTo(".scroll-cue__dot", { yPercent: -100 }, { yPercent: 320, duration: 1.6, ease: "power2.inOut", repeat: -1 });
+      whileVisible(".hero", sheen, cue, ...sparkleTweens);
+      gsap.from(".scroll-cue", { opacity: 0, duration: 1, delay: 1.6 });
+      gsap.to(".scroll-cue", { opacity: 0, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "20% top", scrub: true } });
+
+      // Orbs float gently; their dashed gold rings orbit
+      gsap.utils.toArray(".orb-wrap").forEach((wrap, i) => {
+        whileVisible(wrap,
+          gsap.to(wrap, { y: i % 2 ? 12 : -12, duration: 4.5, ease: "sine.inOut", yoyo: true, repeat: -1 }),
+          gsap.to(wrap.querySelector(".orb-ring"), { rotation: i % 2 ? -360 : 360, duration: 40, ease: "none", repeat: -1 }));
+        gsap.from(wrap.querySelector(".orb-ring"), { autoAlpha: 0, scale: 0.9, duration: 1.4, ease: "expo.out", delay: 0.5, scrollTrigger: once(wrap) });
+      });
+
+      // Voucher: soft light blobs wander behind, the card stack breathes
+      whileVisible(".voucher",
+        ...gsap.utils.toArray(".blobs span").map((b) => gsap.to(b, {
+          x: gsap.utils.random(-120, 120), y: gsap.utils.random(-80, 80), scale: gsap.utils.random(0.85, 1.2),
+          duration: gsap.utils.random(7, 11), ease: "sine.inOut", yoyo: true, repeat: -1,
+        })),
+        gsap.to(".cards", { y: -14, duration: 3.2, ease: "sine.inOut", yoyo: true, repeat: -1 }));
+
+      // Marquee: loops forever and speeds up with scroll velocity, settling back afterwards
+      const track = document.querySelector(".marquee__track");
+      const group = track.querySelector(".marquee__group");
+      const clone = group.cloneNode(true);
+      track.appendChild(clone);
+      cleanups.push(() => clone.remove());
+      const marquee = gsap.to(track, { xPercent: -50, duration: 26, ease: "none", repeat: -1 });
+      whileVisible(".marquee", marquee);
+      ScrollTrigger.create({
+        trigger: ".marquee", start: "top bottom", end: "bottom top",
+        onUpdate: (self) => {
+          const boost = gsap.utils.clamp(1, 6, 1 + Math.abs(self.getVelocity()) / 300);
+          gsap.to(marquee, { timeScale: boost, duration: 0.2, overwrite: true });
+          gsap.to(marquee, { timeScale: 1, duration: 1.2, delay: 0.4, ease: "power2.out" });
+        },
+      });
+
+      // Decorative pointer effects (desktop only, eased so they never feel glued to the cursor)
+      if (fine) {
+        const voucher = document.querySelector(".voucher");
+        const cards = document.querySelector(".cards");
+        gsap.set(cards, { transformPerspective: 900 });
+        const rx = gsap.quickTo(cards, "rotationX", { duration: 0.8, ease: "power3.out" });
+        const ry = gsap.quickTo(cards, "rotationY", { duration: 0.8, ease: "power3.out" });
+        listen(voucher, "pointermove", (e) => {
+          const r = voucher.getBoundingClientRect();
+          ry(((e.clientX - r.left) / r.width - 0.5) * 14);
+          rx(-((e.clientY - r.top) / r.height - 0.5) * 10);
+        });
+        listen(voucher, "pointerleave", () => { rx(0); ry(0); });
+
+        // Hero crystals lean slightly toward the cursor
+        const hero = document.querySelector(".hero");
+        const hx = gsap.quickTo(".hero__content", "x", { duration: 1.2, ease: "power3.out" });
+        const sx = gsap.quickTo(".sparkles", "x", { duration: 1.6, ease: "power3.out" });
+        listen(hero, "pointermove", (e) => {
+          const px = e.clientX / window.innerWidth - 0.5;
+          hx(px * -18); sx(px * 40);
+        });
+
+        // Magnetic buttons; GSAP owns the transform, so press feedback moves here too
+        gsap.utils.toArray(".btn").forEach((btn) => {
+          // Drop the CSS transform transition so it doesn't fight GSAP's per-frame updates
+          gsap.set(btn, { transition: "background-color 200ms ease, color 200ms ease" });
+          const mx = gsap.quickTo(btn, "x", { duration: 0.5, ease: "power3.out" });
+          const my = gsap.quickTo(btn, "y", { duration: 0.5, ease: "power3.out" });
+          listen(btn, "pointermove", (e) => {
+            const r = btn.getBoundingClientRect();
+            mx((e.clientX - r.left - r.width / 2) * 0.3);
+            my((e.clientY - r.top - r.height / 2) * 0.4);
+          });
+          listen(btn, "pointerleave", () => { mx(0); my(0); gsap.to(btn, { scale: 1, duration: 0.16 }); });
+          listen(btn, "pointerdown", () => gsap.to(btn, { scale: 0.97, duration: 0.12, ease: "power2.out" }));
+          listen(btn, "pointerup", () => gsap.to(btn, { scale: 1, duration: 0.2, ease: "power2.out" }));
+        });
+      }
+
+      return () => cleanups.forEach((fn) => fn());
+    });
+
+    // Scroll progress line under the header (indicates position, so it stays on with reduced motion)
+    gsap.to(".progress", { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.3 } });
+
+    // Web fonts change text height; recalculate trigger positions once they land
+    document.fonts.ready.then(() => ScrollTrigger.refresh());
+  }
+</script>
+</body>
+</html>
